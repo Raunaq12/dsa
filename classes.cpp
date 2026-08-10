@@ -7,8 +7,25 @@ class Myclass{
         std::string myString;
 };
 
+class Book{
+    public:
+        std::string title;
+        std::string author;
+        int year;
+};
+
 int main(){
-    Myclass myObj;
-    myObj.myNum = 15;
-    std::cout << myObj.myNum;
+    Book book1;
+    book1.title = "Matilda";
+    book1.author = "Roald Dahl";
+    book1.year = 1988; 
+
+    Book book2;
+    book2.title = "The Giving Tree";
+    book2.author = "Shel Silverstein";
+    book2.year = 1964;
+
+    std::cout << book1.title << ", " << book1.author << ", " << book1.year << "\n";
+    std::cout << book2.title << ", " << book2.author << ", " << book2.year;
+
 }
