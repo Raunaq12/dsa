@@ -14,6 +14,13 @@ class Book{
         int year;
 };
 
+class method{
+    public:
+        void my_method(){
+            std::cout << "Hello World";
+    }
+};
+
 int main(){
     Book book1;
     book1.title = "Matilda";
@@ -26,6 +33,8 @@ int main(){
     book2.year = 1964;
 
     std::cout << book1.title << ", " << book1.author << ", " << book1.year << "\n";
-    std::cout << book2.title << ", " << book2.author << ", " << book2.year;
+    std::cout << book2.title << ", " << book2.author << ", " << book2.year << "\n";
 
+    method func1;
+    func1.my_method();
 }
