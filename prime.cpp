@@ -15,5 +15,4 @@ int main(){
     else{
         std::cout << "False";
     }
-
 }
