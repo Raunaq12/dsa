@@ -1,10 +1,15 @@
 #include <iostream>
 using namespace std;
 
-void function(){
-    cout << "1\n";
-    function();
+void function(int n){
+    if(n == 0){
+        return;
+    }
+    cout<< "Raunaq ";
+    function(n-1);
 }
 int main(){
-    function();
+    int n;
+    cin >> n;
+    function(n);
 }
