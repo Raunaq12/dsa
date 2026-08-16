@@ -1,12 +1,17 @@
 #include <iostream>
 using namespace std;
 
-int fibonacci(int n){
+int main(){
+    int n, before = 0, next = 1, fibonacci;
+    cin >> n;
     if(n == 0){
-        return;
+        cout << n;
     }
     
-}
-int main(){
-
+    for(int i=1; i<=n; i++){
+        cout << before << " ";
+        fibonacci = before + next;
+        before = next;
+        next = fibonacci;
+    }
 }
