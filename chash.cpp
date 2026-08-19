@@ -14,5 +14,5 @@ int main(){
     cout << "Enter a character to check: ";
     cin >> s;
     cout << hash[s-'a'];
-
+    return 0;
 }
