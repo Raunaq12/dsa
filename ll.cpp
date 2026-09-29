@@ -41,18 +41,46 @@ int presentinLL(Node* head, int value){
     }
     return 0;
 }
+Node* deleteHead(Node* head){
+        if(head==NULL) return head;
+        Node* temp = head;
+        head=head->next;
+        delete temp;
+        return head;
+}
+Node* printLL(Node* head){
+    Node* temp = head;
+    while(temp!=NULL){
+        cout << temp->data << " ";
+        temp=temp->next; 
+    }
+}
+Node* deleteTail(Node* head){
+    if(head==NULL) return head;
+    Node* temp = head;
+    while(temp->next->next!=NULL){
+        temp=temp->next;
+    }
+    delete temp->next;
+    temp->next = NULL;
+    return head;
+}
 
 int main(){
     vector<int> arr = {1, 2, 3, 4, 5};
     Node* head = convertArrtoLL(arr);
     Node* temp = head;
-    while(temp!=nullptr){
-        cout << temp->data << " ";
-        temp=temp->next;
-    }
     cout << "\n";
     cout<<freq(head);
     cout << "\n";
     cout<<presentinLL(head, 5);
-    
+    cout << "\n";
+    printLL(head);
+    head = deleteHead(head);
+    cout << "\n";
+    printLL(head);
+    cout << "\n";
+    head = convertArrtoLL(arr);
+    head = deleteTail(head);
+    printLL(head);
 }
