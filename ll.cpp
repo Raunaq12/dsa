@@ -66,6 +66,25 @@ Node* deleteTail(Node* head){
     return head;
 }
 
+Node* insertatHead(Node* head, int val){
+    Node* temp = new Node(val);
+    temp->next=head;
+    return temp;
+}
+
+Node* insertatTail(Node* head, int val){
+    if(head==NULL) {
+        return new Node(val);
+    }
+    Node* temp = head;
+    while(temp->next!=NULL){
+        temp=temp->next;
+    }
+    Node* newNode = new Node(val);
+    temp->next=newNode;
+    return head;
+}
+
 int main(){
     vector<int> arr = {1, 2, 3, 4, 5};
     Node* head = convertArrtoLL(arr);
@@ -82,5 +101,11 @@ int main(){
     cout << "\n";
     head = convertArrtoLL(arr);
     head = deleteTail(head);
+    printLL(head);
+    cout << "\n";
+    head = insertatHead(head, 500);
+    printLL(head);
+    cout << "\n";
+    head = insertatTail(head, 1000);
     printLL(head);
 }
